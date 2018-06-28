@@ -19,8 +19,5 @@ class FoodController {
     fun getFood() = foodRepository.findAll().take(10)
 
     @PostMapping
-    fun createFood(@RequestBody food: Food): Food {
-        foodRepository.save(food)
-        return food
-    }
+    fun createFood(@RequestBody food: Food) = foodRepository.save(food)
 }
